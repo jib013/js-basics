@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"><![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Console Tips</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <h2>Fun with console.log</h2>
+
+        <p onClick="makeGreen()">xBREAKxDOWNx</p>
+
+        <script>
+            const dogs = [{ name: 'Nyx', age: 13 }, { name: 'Kona', age: 7 }];
+
+            function makeGreen() {
+                const p = document.querySelector('p');
+                p.style.color = '#BADA55';
+                p.style.fontSize = '50px';
+            }
+        </script>
+
+        <p>Regular</p><br><br>
+        <script>
+            console.log('hello');
+        </script>
+
+        <p>Interpolated</p><br><br>
+        <script>
+            console.log('Hello I am a %s string!', '+po');
+            //adds whatever you pass from the second value to the %s variable
+            console.log(`It's better to use variables like this: ${dogs.name}`);
+            //using es6 back ticks
+        </script>
+
+        <p>Styled</p><br><br>
+
+        <p>Warning!</p><br><br>
+
+        <p></p><br><br>
+
+        <p></p><br><br>
+
+        <p></p><br><br>
+
+        <p></p><br><br>
+        
+    </body>
+</html>
