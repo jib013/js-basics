@@ -32,11 +32,11 @@ View the Console to see the results<br><br>
 
 4. Let's use Variables! <br><br>
 <script>
-    let a = 10;
-    let b = 7 * a;
+    let num1 = 10;
+    let num2 = 7 * num1;
     console.log("Variables");
-    console.log(a * 9);
-    console.log(b);
+    console.log('num1: ' + (num1 * 9));
+    console.log('num2: ' + (num2));
 </script>
 
 5. Let's try a few more things! <br><br>
@@ -68,145 +68,9 @@ const c = 5 % 4;
 const d = a - 17;
 const e = a + b + c + d;
 
-module.exports = {a, b, c, d, e}
+console.log(a, b, c, d, e);
 
 </script>
-
-<h3>Else / If Statements</h3>
-
-<label for="weather">Select the weather type today: </label>
-<select id="weather">
-  <option value="">--Make a choice--</option>
-  <option value="sunny">Sunny</option>
-  <option value="rainy">Rainy</option>
-  <option value="snowing">Snowing</option>
-  <option value="overcast">Overcast</option>
-</select>
-
-<p></p>
-
-<script>
-    
-const select = document.querySelector('select');
-const para = document.querySelector('p');
-
-select.addEventListener('change', setWeather);
-
-function setWeather() {
-  const choice = select.value;
-
-  if (choice === 'sunny') {
-    para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
-  } else if (choice === 'rainy') {
-    para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
-  } else if (choice === 'snowing') {
-    para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
-  } else if (choice === 'overcast') {
-    para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
-  } else {
-    para.textContent = '';
-  }
-}
-
-</script>
-
-
-<h3>Switch Statements</h3>
-Check the Console Log to see what day of the week it is! This is just a basic Switch Statement. 
-
-<script>
-    const day = new Date().getDay();
-
-    switch (day) {
-        case 0: 
-            console.log("It's Sunday! Hopefully you don't have the 'Sunday Scaries'...");
-            break;
-        case 1:
-            console.log("Happy Monday! Hopefully you don't have a case of the Monday's...");
-            break; 
-        case 2:
-            console.log("Taco Tuesday!!!!");
-            break;
-        case 3:
-            console.log("It's Wednesday my dudes!");
-            break;  
-        case 4:
-            console.log("Thirsty Thirsday! Don't go too hard, you still have one more work day...");
-            break;      
-        case 5: 
-            console.log("Happy Friday!!");
-            break;
-        case 6:
-            console.log("Saturday's for the bois!");
-            break;
-        default: 
-            console.log("Uhhh da fuck just happned?!");
-    }
-
-</script>
-
-<br><br>
-
-<h3>Switch Ranges</h3>
-Switch Ranges are used to evaluate a range of values in a switch block, as opposed to a single value like the above day of the week checker. Below we are setting the student's grade based on a range of values that they fall in. 
-
-<script>
-    const grade = 87;
-
-    switch (true) {
-        case grade >=90:
-            console.log("A");
-            break;
-        case grade >=80: 
-            console.log("B");
-            break;
-        case grade >=70: 
-            console.log("C");
-            break;
-        case grade >=60: 
-            console.log("D");
-            break;
-        default: 
-            console.log("FAIL");
-    }
-
-</script>
-
-<br><br>
-<h3>Multiple Cases</h3>
-This small application matching the current month to the appropriate season. 
-
-<script>
-    const month = new Date().getMonth();
-
-    switch (month) {
-        case 0:  
-        case 1: 
-        case 2:
-            console.log("Winter");
-            break;
-        case 3: 
-        case 4:
-        case 5: 
-            console.log("Spring");
-            break;
-        case 6: 
-        case 7: 
-        case 8: 
-            console.log("Summer");
-            break;
-        case 9: 
-        case 10:
-        case 11: 
-            console.log("Autumn");
-            break;
-        default: 
-            console.log("THERE ARE NO MONTHS OR SEASONS!!!");
-    }
-</script>
-
-<br><br>
-We reviewed the switch statement, a type of conditonal statement which evaluates an expression and outputs different values based on matching results. We reviewed switch statements using a range and multiple case statements.
 
 </body>
 </html>

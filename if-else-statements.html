@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics - Addition</title>
+</head>
+<body>
+
+
+<h3>Else / If Statements</h3>
+
+<label for="weather">Select the weather type today: </label>
+<select id="weather">
+  <option value="">--Make a choice--</option>
+  <option value="sunny">Sunny</option>
+  <option value="rainy">Rainy</option>
+  <option value="snowing">Snowing</option>
+  <option value="overcast">Overcast</option>
+</select>
+
+<p></p>
+
+<script>
+    
+const select = document.querySelector('select');
+const para = document.querySelector('p');
+
+select.addEventListener('change', setWeather);
+
+function setWeather() {
+  const choice = select.value;
+
+  if (choice === 'sunny') {
+    para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+  } else if (choice === 'rainy') {
+    para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+  } else if (choice === 'snowing') {
+    para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+  } else if (choice === 'overcast') {
+    para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+  } else {
+    para.textContent = '';
+  }
+}
+
+</script>
+
+<h3>Conditional Operator '?'</h3>
+
+Long version: <br><br>
+
+<script>
+let accessAllowed;
+let age = promt('How old are you?','');
+
+if (age > 18) {
+    accessAllowed = true;
+} else {
+    accessAllowed = false;
+}
+
+alert(accessAllowed);
+</script>
+
+Short Version: let result = condition ? value1 : value2; <br><br>
+
+<script>
+    let accessAllowed = (age > 18) ? true : false;
+</script>
+
+Multiple '?'<br><br>
+<script>
+    let age = prompt('age?', 18);
+
+    let message = (age < 3) ? 'Hi, baby!' :
+    (age < 18) ? 'Hello!' :
+    (age < 100) ? 'Greetings!' :
+    'What an unusual age!';
+
+    alert( message );
+</script>
+
+Using the if..else construct, write the code which asks: ‘What is the “official” name of JavaScript?’<br><br>
+
+If the visitor enters “ECMAScript”, then output “Right!”, otherwise – output: “You don’t know? ECMAScript!”<br><br>
+
+<script>
+    let jsAnswer = prompt(`what is the 'official' name of JavaScript?`, '');
+
+    if (jsAnswer == 'ECMAScript') {
+        alert('Correct!');
+    } else {
+        alert(`The 'official' name of JavaScript is ECMAScript`);
+    }
+</script>
+
+Using if..else, write the code which gets a number via prompt and then shows in alert:<br><br>
+
+    1, if the value is greater than zero,<br>
+    -1, if less than zero,<br>
+    0, if equals zero.<br>
+
+In this task we assume that the input is always a number.<br><br>
+
+<script>
+    let numAnswer = prompt('Enter a number:');
+
+    if (numAnswer > 0) {
+        alert('Value is greater than zero.');
+    } else if (numAnswer < 0) {
+        alert('The value is less than zero.');
+    } else if (numAnswer == 0) {
+        alert('The value is equal to zero.');
+    }
+</script>
+
+Rewrite 'if' into '?' <br><br>
+
+<script>
+    let ifResult;
+
+    if (a + b < 4) {
+    ifResult = 'Below';
+    } else {
+    ifResult = 'Over';
+    }
+</script>
+
+<script>
+    let result = (a + b < 4) ? 'Below' : 'Over';
+    console.log(result);
+
+</script>
+
+
+</body>
+</html>
