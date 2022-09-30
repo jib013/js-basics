@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Basics - Addition</title>
+    <title>JS Basics - Switcher</title>
 </head>
 <body>
 
@@ -104,6 +104,42 @@ This small application matching the current month to the appropriate season.
 
 <br><br>
 We reviewed the switch statement, a type of conditonal statement which evaluates an expression and outputs different values based on matching results. We reviewed switch statements using a range and multiple case statements.
+
+
+<h3>Ternary Operator</h3>
+
+The following live example shows a simple theme chooser where the styling for the site is applied using a ternary operator.<br><br>
+
+<label for="theme">Select theme:</label>
+<select id="theme">
+    <option value="white">White</option>
+    <option value="black">Black</option>
+</select>
+
+<h1>This theme color changed</h1>
+
+<script>
+
+    const select = document.querySelector('select');
+    const html = document.querySelector('html');
+
+    document.body.style.padding = '10px';
+
+    function switchTheme(bgcolor, textColor) {
+        html.style.backgroundColor = bgcolor;
+        html.style.color = textColor;
+    }
+
+    select.addEventListener('change', function() {
+        select.value === 'black'
+            ? switchTheme('black', 'white')
+            : switchTheme('white', 'black')
+        }
+    );
+
+    //we've also got an onchange event listener that serves to run a function containing a ternary operator. It starts with a test condition — select.value === 'black'. If this returns true, we run the update() function with parameters of black and white, meaning that we end up with a background color of black and a text color of white. If it returns false, we run the update() function with parameters of white and black, meaning that the site colors are inverted.
+
+</script>
 
 </body>
 </html>

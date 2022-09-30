@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Basics - Addition</title>
+    <title>JS Basics - If/Else Statements</title>
 </head>
 <body>
 
@@ -53,7 +53,7 @@ Long version: <br><br>
 
 <script>
 let accessAllowed;
-let age = promt('How old are you?','');
+let age = prompt('How old are you?','');
 
 if (age > 18) {
     accessAllowed = true;
@@ -67,16 +67,16 @@ alert(accessAllowed);
 Short Version: let result = condition ? value1 : value2; <br><br>
 
 <script>
-    let accessAllowed = (age > 18) ? true : false;
+    let access = (age > 18) ? true : false;
 </script>
 
 Multiple '?'<br><br>
 <script>
-    let age = prompt('age?', 18);
+    let ageMulti = prompt('age?', '');
 
     let message = (age < 3) ? 'Hi, baby!' :
-    (age < 18) ? 'Hello!' :
-    (age < 100) ? 'Greetings!' :
+    (ageMulti < 18) ? 'Hello!' :
+    (ageMulti < 100) ? 'Greetings!' :
     'What an unusual age!';
 
     alert( message );
@@ -105,7 +105,7 @@ Using if..else, write the code which gets a number via prompt and then shows in 
 In this task we assume that the input is always a number.<br><br>
 
 <script>
-    let numAnswer = prompt('Enter a number:');
+    let numAnswer = prompt('Enter a number to verify if it is greater than zero or not:');
 
     if (numAnswer > 0) {
         alert('Value is greater than zero.');
@@ -116,9 +116,9 @@ In this task we assume that the input is always a number.<br><br>
     }
 </script>
 
-Rewrite 'if' into '?' <br><br>
+Rewrite 'if' into '?' using ternary operator '?' <br><br>
 
-<script>
+<!-- <script>
     let ifResult;
 
     if (a + b < 4) {
@@ -126,13 +126,44 @@ Rewrite 'if' into '?' <br><br>
     } else {
     ifResult = 'Over';
     }
-</script>
+</script> -->
 
-<script>
+<!-- <script>
     let result = (a + b < 4) ? 'Below' : 'Over';
     console.log(result);
+//the above is missing delaring the variables 'a' and 'b'.
+</script> -->
 
+Write 'if...else' into '?' using multiple ternary operators '?' <br><br>
+
+<script>
+
+    const login = prompt('Are you an Employee or a Director?', '');
+
+    let loginMessage = login;
+
+    if (login == 'Employee') {
+        loginMessage = 'Hello';
+    } else if (login == 'Director') {
+        loginMessage = 'Greetings';
+    } else if (login == '') {
+        loginMessage = 'No login';
+    } else {
+        loginMessage = '';
+    }
+
+    alert(loginMessage);
 </script>
+
+<!-- <script>
+    let loginMessage2 = (login == 'Employee') ? 'Hello' :
+        (login == 'Director') ? 'Greetings' :
+        (login == '') ? 'No login' :
+        '';
+</script> -->
+
+Note: Nested Ternary operators should not be used often as it makes the code hard to read. 
+
 
 
 </body>
