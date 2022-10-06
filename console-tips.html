@@ -95,16 +95,44 @@
 
         <p>Grouping Together</p><br><br>
 
+        Adding 'Collapsed' to console.group(); will collapse the console log by default rather than have it expanded by default. <br><br>
         <script>
             dogs.forEach(dog => {
-                console.log(`This is ${dog.name}`);
-                console.log(`${dog.name} is ${dog.age} years old`);
-                console.log(`${dog.name} is ${dog.age * 7} years old in ${dog.name} years.`);
+                console.groupCollapsed(`${dog.name}`);
+                    console.log(`This is ${dog.name}`);
+                    console.log(`${dog.name} is ${dog.age} years old`);
+                    console.log(`${dog.name} is ${dog.age * 7} years old in dog years.`);
+                console.groupEnd(`${dog.name}`);
             })
         </script>
 
         <p>Counting</p><br><br>
 
+        This will count how many times you have used a word, number, object, DOM node, etc. <br><br>
+        <script>
+            console.count(`Dog`);
+        </script>
+
+        <p>Timing</p><br><br>
+
+        see how long something takes. <br><br>
+        <script>
+            console.time('fetching data');
+            fetch('https://api.github.com/users/jib013')
+                .then(data => data.json())
+                .then(data => {
+                    console.timeEnd('fetching data');
+                    console.log(data);
+                });
+        </script>
+
+
+        <p>Timing</p><br><br>
+
+        Take an array (dogs) of objects (each dog) and assuming they have the same properties (name, age, etc) then it will display the array in a table.   
+        <script>
+            console.table(dogs);
+        </script>
         <p></p><br><br>
         
     </body>
