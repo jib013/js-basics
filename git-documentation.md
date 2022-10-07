@@ -17,6 +17,32 @@ git commit -m "A message describing what you have done to make this snapshot dif
 git status
 git log
 
+### Commands related to reverting changes
+git revert <commit_hash> ex: git revert 9b5f04a
+
+### Example Flow
+cd to repo
+git clone git@github.com:USER-NAME/REPOSITORY-NAME.git (for a fresh repo)
+
+git pull 
+git branch branch_name
+git checkout branch_name
+git push --set-upstream origin branch_name
+
+(modify files)
+
+git add -A
+git status
+git commit -m "update to branch_name"
+git push
+
+
+
+
+
+
+
+
 The basic Git syntax is program | action | destination.
 
 For example,
