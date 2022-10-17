@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- styles -->
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <!-- scripts -->
         <script type="text/javascript" src="#"></script>
     </head>
@@ -126,6 +126,48 @@
                         console.log(`You pressed "${event.key}",`);
                     });
                 </script>
+
+                <h3>Arrow Functions</h3>
+
+                <p>If you pass an anonymous function like this, there's an alternative form you can use, called an arrow function. Instead of function(event), you write (event) =>:</p>
+                <p>If the function only has one line in the curly brackets, you omit the curly brackets:</p>
+
+                <input type="text" id="textBox3" name="textBox">
+
+                <script>
+                    const textBox3 = document.getElementById('textBox3');
+
+                    textBox3.addEventListener('keydown', (event) => console.log(`You pressed "${event.key}".`)); 
+                </script>
+
+                <p>If the function only takes one parameter, you can also omit the brackets around the parameter:</p>
+
+                <input type="text" id="textBox4" name="textBox">
+
+                <script>
+                    const textBox4 = document.getElementById('textBox4');
+
+                    textBox4.addEventListener('keydown', event => console.log(`You pressed "${event.key}".`));
+
+                </script>
+
+                <p>Finally, if your function needs to return a value, and contains only one line, you can also omit the return statement. In the following example we're using the map() method of Array to double every value in the original array:</p>
+
+                <script>
+                    const originals = [1, 2, 3];
+                    const doubled = originals.map((item) => item * 2);
+
+                    console.log(doubled); // [2, 4, 6]
+                </script>
+
+                <p>The map() method takes each item in the array in turn, passing it into the given function. It then takes the value returned by that function and adds it to a new array.</p>
+                <p>So in the example above, (item) => item * 2 is the arrow function equivalent of:</p>
+
+                <script>
+                    function doubleItem(item) {
+                        return item *2;
+                    }
+                </script>
                 
             </div>
         </div>
@@ -138,4 +180,3 @@
     </body>
 </html>
 
-If the disk space for the selected plan is exceeded for consecutive months, a Beacon representative will contact you to move you to a new hosting plan that meets your current needs.  Otherwise a $0.10/GBoverrun fee will be assessed.
