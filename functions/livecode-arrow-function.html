@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Live Code: Arrow Functions</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- styles -->
-        <link rel="stylesheet" type="text/css" href="../css/styles.css">
-        <!-- scripts -->
-        <script type="text/javascript" src="#"></script>
-    </head>
-    <body>
-        <header class="site-header">
-            <div class="wrapper">
-            </div>
-        </header>
-    
-        <div class="site-content">
-            <div class="wrapper">
-                <h1>Live Code: Arrow Functions ( => )</h1>
 
-                <input type="text" id="textBox" name="textbox">
-                <div id="output"></div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Live Code: Arrow Functions</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <!-- scripts -->
+    <script type="text/javascript" src="#"></script>
+</head>
 
-                <script>
-                    const textBox = document.getElementById("textBox");
-                    const output = document.getElementById("output");
-
-                    textBox.addEventListener("keydown", event => output.textContent = `You pressed "${event.key}".`);
-                </script>
-                
-            </div>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
         </div>
-        
-        <footer class="site-footer">
-            <div class="wrapper">
-            </div>
-        </footer>
+    </header>
 
-    </body>
+    <div class="site-content">
+        <div class="wrapper">
+            <h1>Live Code: Arrow Functions ( => )</h1>
+
+            <input type="text" id="textBox" name="textbox">
+            <div id="output"></div>
+
+            <script>
+                const textBox = document.getElementById("textBox");
+                const output = document.getElementById("output");
+
+                textBox.addEventListener("keydown", event => output.textContent = `You pressed "${event.key}".`);
+            </script>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+        </div>
+    </footer>
+
+</body>
+
 </html>
