@@ -91,11 +91,14 @@
 		pre{}
 	
 	/* HEADINGS */
-		h1{}
+		h1{
+			margin-bottom:40px;
+            font-size: 40px;
+            text-transform: uppercase;
+		}
 		h2{
             margin-bottom:30px;
             font-size: 30px;
-            text-transform: uppercase;
         }
 		h3{
             margin-bottom: 10px;
