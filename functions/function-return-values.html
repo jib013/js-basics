@@ -20,7 +20,7 @@
         <div class="wrapper">
             <h1>Functions: Return Values</h1>
             <h2>What are Return Values</h2>
-            <p>Return values are just what they sound like — the values that a function returns when it completes.</p>
+            Return values are just what they sound like — the values that a function returns when it completes.<br><br>
 
                 const myText = "The weather is cold";<br>
                 const newString = myText.replace("cold", "warm");<br>
@@ -30,7 +30,7 @@
                 // a new string with the replacement made<br>
 
             <h2>Active Learning: Our own return value function</h2>
-            <p>Function library example.s</p>
+            Function library examples
 
             <input class="numberInput" type="text">
             <p></p>
@@ -38,6 +38,38 @@
             <script>
                 const input = document.querySelector('.numberInput');
                 const para = document.querySelector('p');
+
+                function squared(num) {
+                    return num * num;
+                }
+
+                function cubed(num) {
+                    return num * num * num;
+                }
+
+                function factorial(num) {
+                    if (num < 0) return undefined;
+                    if (num === 0) return 1;
+                    
+                    let x = num -1;
+                    
+                    while (x > 1) {
+                        num *= x;
+                        x--;
+                    }
+                    return num;
+                }
+
+                input.addEventListener("change", () => {
+                    const num = parseFloat(input.value);
+                    if (isNaN(num)) {
+                        para.textContent = "You need to enter a number!";
+                    } else {
+                        para.textContent = `${num} squared is ${squared(num)}. `;
+                        para.textContent += `${num} cubed is ${cubed(num)}. `;
+                        para.textContent += `${num} factoral is ${factoral(num)}. `;
+                    }
+                });
             </script>
 
         </div>
