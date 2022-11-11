@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <title>Fundamentals Part 3: Assignment</title>
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+        </div>
+    </header>
+
+    <div class="site-content">
+        <div class="wrapper">
+            <h1>Fundamentals Part 3: Assignment</h1>
+
+            <p>1. Write a function called add7 that takes one number and returns that number + 7.</p>
+            <p>Enter a number: <input id="addInput" type="text"></p>
+            <p id="answer" class="answer"></p>
+            
+
+            <script>
+                const input = document.getElementById('addInput');
+                const answer = document.getElementById('answer');
+
+                function add7(num) {
+                    return num + 7;
+                }
+
+                input.addEventListener('change', () => {
+                    const num = parseFloat(input.value);
+
+                    if (isNaN(num)) {
+                        answer.textContent = "Please enter a number.";
+                    } else {
+                        answer.textContent = `You entered "${num}" + 7 = ${add7(num)}. `;
+                    }
+                });
+            </script>
+
+            <p>2. Write a function called multiply that takes 2 numbers and returns their product.</p>
+            <p>Enter a number: <input id="multiInput1" class="multiInput" type="text"></p>
+            <p>Enter a number: <input id="multiInput2" class="multiInput" type="text"></p>
+            <p id="answer2" class="answer"></p>
+
+            <script>
+                const multiNum1 = document.getElementById('multiInput1');
+                const multiNum2 = document.getElementById('multiInput2');
+                const answer2 = document.getElementById('answer2');
+
+                function multi(numA, numB) {
+                    return numA * numB;
+                }
+
+                document.querySelectorAll('.multiInput').forEach
+                (item => {
+                    item.addEventListener('keyup', () => {
+                        const num1 = multiNum1.value ? parseFloat(multiNum1.value) : undefined;
+                        // short hand if statement, if multiNum1 has a value, assign parseFloat to that value
+                        const num2 = multiNum2.value ? parseFloat(multiNum2.value) : undefined;
+                        
+                        if (isNaN(num1 + num2)) {
+                            answer2.textContent = "Please enter a number for the first input number.";
+                        } else {
+                            answer2.textContent = `${num1} multiplied by ${num2} = ${multi(num1, num2)}. `;
+                        }
+                    })
+                });
+            </script>
+
+            <p>3. Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.</p>
+            <p>Enter a string: <input id="enterString" class="enterString" type="text"></p>
+            <p id="answer3" class="answer"></p>
+
+            <script>
+
+                // const string = 'this is a string';
+                // const string2 = string.charAt(0).toUpperCase() + string.slice(1);
+                // console.log(string2);
+
+                //output: This is a string. 
+
+                const strInput = document.getElementById("enterString");
+                const answer3 = document.getElementById("answer3");
+                
+                function capitalize(arg) {
+                    const lowerCase = arg.toLowerCase();
+                    const str2 = lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
+                    return str2;
+                }
+
+                strInput.addEventListener('keyup', (e) => { // e = event
+                    let inStr = capitalize(e.target.value);
+                    if (typeof inStr == 'string') {
+                        answer3.textContent = inStr;
+                    } else {
+                        answer3.textContent = `Please enter a string.`;
+                    }
+                });
+            </script>
+
+            <p>4. Write a function called lastLetter that takes a string and returns the very last letter of that string: lastLetter("abcd") should return "d"</p>
+            <p>Enter a string: <input id="enterString2" class="enterString" type="text"></p>
+            <p id="answer4" class="answer"></p>
+
+            <script>
+                const strInput2 = document.getElementById('enterString2');
+                const answer4 = document.getElementById('answer4');
+
+                function lastLetter(arg) {
+                    const lastLet = arg.slice(arg.length-1);
+                    return lastLet;
+                }
+
+                strInput2.addEventListener('keyup', (e) => {
+                    let inStr2 = lastLetter(e.target.value);
+
+                    if (typeof inStr2 == 'string') {
+                        answer4.textContent = inStr2;
+                    } else {
+                        answer4.textContent = "Please enter a string";
+                    }
+                });
+
+            </script>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+        </div>
+    </footer>
+
+</body>
+
+</html>

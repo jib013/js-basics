@@ -138,3 +138,13 @@
 		ul li{}
 	
 	/* … */
+
+		.answer {
+			width:50%;
+			min-height:19px;
+			border: 2px solid #000;
+			background: #eee;
+			text-align: center;
+			padding: 5px;
+			margin: 10px 0px 30px 30px;
+		}
